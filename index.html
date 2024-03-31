@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/urllogo.svg" /> <!-- url shortner logo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="src/index.css">
+  <title>URL Shortener </title>
+</head>
+<body>
+  <div id="container">
+    <h1>URL Shortener</h1>
+    <input type="text" id="url-input" placeholder="Enter your URL">
+    <button onclick="shortenUrl()">Shorten</button>
+    <div id="shortened-url"></div>
+  </div>
+    <script>
+      function shortenUrl() {
+        var userInput = document.getElementById("url-input").value;
+        // You need to implement your URL shortening logic here.
+        // For this example, let's just display the input URL.
+        var shortenedUrl = userInput;
+
+        // Display the shortened URL
+        var displayArea = document.getElementById("shortened-url");
+        displayArea.innerHTML = "<p><strong>Shortened URL:</strong> " + shortenedUrl + "</p>";
+
+        // Create a copy button with icon
+        var copyButton = document.createElement("button");
+        copyButton.innerHTML = 'Copy <i class="fas fa-copy"></i>';
+        copyButton.onclick = function() {
+        copyToClipboard(shortenedUrl);
+        };
+        displayArea.appendChild(copyButton);
+      }
+        
+      function copyToClipboard(text) {
+        // Create a textarea element
+        var input = document.createElement("textarea");
+        // Set the text content of the textarea to the provided text (the shortened URL)
+        input.innerHTML = text;
+        // Append the textarea element to the document body
+        document.body.appendChild(input);
+        // Select the text within the textarea
+        input.select();
+        // Copy the selected text to the clipboard
+        document.execCommand("copy");
+        // Remove the textarea element from the document body
+        document.body.removeChild(input);
+        // Display a popup alert to notify the user that the text has been copied to the clipboard
+        alert(" Link Copied!");
+      }
+
+    </script>
+    <!--<div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>-->
+  </body>
+</html>
