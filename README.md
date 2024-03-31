@@ -1,13 +1,3 @@
-<!-- # React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
- -->
-
  # URL Shortener
 
 URL Shortener is a simple web application implemented in React that allows users to shorten long URLs into concise, easy-to-share links. This project focuses solely on the frontend implementation, providing a clean and intuitive user interface for URL shortening.
